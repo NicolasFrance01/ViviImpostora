@@ -59,65 +59,69 @@ class PepeGame {
     }
 
     toScreen(screenId) {
-        console.log('Navigating to screen:', screenId);
-        document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+        console.log('--- Screen Transition ---');
+        console.log('Next:', screenId);
+
+        // Aggressive overlay cleanup
+        document.querySelectorAll('.modal-overlay, .screen').forEach(el => el.classList.remove('active'));
+
         const next = document.getElementById(`screen-${screenId}`);
-        if (!next) return;
+        if (!next) {
+            console.error('Screen not found:', screenId);
+            return;
+        }
 
         next.classList.add('active');
         this.state.screen = screenId;
 
-        // Reset reveal if going to it
+        // Reveal Screen Specifics
         if (screenId === 'reveal') {
             this.state.isOpened = false;
             const cover = document.getElementById('reveal-image-cover');
             const hint = document.getElementById('reveal-hint');
             const nextBtn = document.getElementById('btn-next-player');
 
-            cover.style.transform = 'translateY(0)';
-            hint.style.opacity = '1';
-            hint.style.display = 'flex'; // Ensure hint is shown
-            nextBtn.style.opacity = '0';
-            nextBtn.style.pointerEvents = 'none';
+            if (cover) cover.style.transform = 'translateY(0)';
+            if (hint) {
+                hint.style.opacity = '1';
+                hint.style.display = 'flex';
+            }
+            if (nextBtn) {
+                nextBtn.style.opacity = '0';
+                nextBtn.style.pointerEvents = 'none';
+            }
         }
 
-        // Always hide start message when leaving timer screen
-        if (screenId !== 'timer') {
-            const msgBox = document.getElementById('start-who-msg');
-            if (msgBox) msgBox.style.opacity = '0';
-        }
+        // Hide start message
+        const msgBox = document.getElementById('start-who-msg');
+        if (msgBox) msgBox.style.opacity = '0';
     }
 
     resetGame() {
-        console.log('Resetting game state...');
-        // Stop timer
-        if (this.state.currentGame?.timerId) {
-            clearInterval(this.state.currentGame.timerId);
-        }
-        if (this.state.msgTimeout) {
-            clearTimeout(this.state.msgTimeout);
-        }
+        console.log('Pepe: Hard Resetting...');
 
-        // Reset state
+        // Stop all timers
+        if (this.state.currentGame?.timerId) clearInterval(this.state.currentGame.timerId);
+        if (this.state.msgTimeout) clearTimeout(this.state.msgTimeout);
+
+        // Clear critical state
         this.state.currentGame = null;
         this.state.selectedTarget = null;
         this.state.isOpened = false;
 
-        // Reset themes if they were cleared? (User said "revision de las configuraciones")
-        // We keep players and mode as per typical game restart behavior.
-
-        // Close all modals
+        // UI Reset
         document.querySelectorAll('.modal-overlay').forEach(m => m.classList.remove('active'));
+        const nextBtn = document.getElementById('btn-next-player');
+        if (nextBtn) {
+            nextBtn.style.opacity = '0';
+            nextBtn.style.pointerEvents = 'none';
+        }
 
-        // Hide messages
-        const msgBox = document.getElementById('start-who-msg');
-        if (msgBox) msgBox.style.opacity = '0';
-
+        // Return to menu
         this.toScreen('menu');
     }
 
     openModal(id) {
-        document.getElementById(`modal-${id}`).classList.add('active');
     }
 
     closeModal(id) {
