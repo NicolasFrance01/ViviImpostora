@@ -284,8 +284,8 @@ class ViviGame {
         }
         const details = document.getElementById('preview-details');
         details.innerHTML = `
-            <p>👥 <strong style="color:var(--accent)">JUGADORES:</strong> ${this.state.players.length}</p>
-            <p>🕵️ <strong style="color:var(--accent)">IMPOSTORES:</strong> ${this.state.impostorsCount}</p>
+            <p>👥 <strong style="color:var(--accent)">JUGADORAS:</strong> ${this.state.players.length}</p>
+            <p>🕵️ <strong style="color:var(--accent)">IMPOSTORAS:</strong> ${this.state.impostorsCount}</p>
             <p>⏱️ <strong style="color:var(--accent)">DURACIÓN:</strong> ${this.state.duration} MIN</p>
             <p>🎮 <strong style="color:var(--accent)">MODO:</strong> ${this.state.mode}</p>
             <p>🎭 <strong style="color:var(--accent)">TEMAS:</strong> ${this.state.themes.length} SELECCIONADOS</p>
@@ -313,7 +313,7 @@ class ViviGame {
             players[playerIndex].isImpostor = true;
 
             if (this.state.mode === 'Clásico') {
-                players[playerIndex].word = 'VIVI LA IMPOSTOR';
+                players[playerIndex].word = 'VIVI LA IMPOSTORA';
             } else if (this.state.mode === 'Misterioso') {
                 let mysteryWord = words[Math.floor(Math.random() * words.length)];
                 while (mysteryWord === mainWord) mysteryWord = words[Math.floor(Math.random() * words.length)];
@@ -522,11 +522,11 @@ class ViviGame {
             this.state.currentGame.totalFound++;
             img.src = 'vivitriste.png';
             title.innerText = '¡LA ENCONTRASTE!';
-            msg.innerText = `${target.name} ERA VIVI LA IMPOSTOR.`;
+            msg.innerText = `${target.name} ERA VIVI LA IMPOSTORA.`;
 
             if (this.state.currentGame.totalFound >= this.state.currentGame.totalImpostors) {
                 title.innerText = '¡GANASTE!';
-                msg.innerText = 'TODOS LOS IMPOSTORES FUERON CAPTURADOS.';
+                msg.innerText = 'TODAS LAS IMPOSTORAS FUERON CAPTURADAS.';
                 btnContinue.style.display = 'none';
             } else {
                 btnContinue.style.display = 'block';
