@@ -5,27 +5,27 @@
     <meta charset="UTF-8">
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>Peretex el Impostor</title>
+    <title>Perro el Impostor</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="peretexicono.png">
+    <link rel="icon" type="image/png" href="hernanicono.png">
     <link rel="manifest" href="manifest.webmanifest">
     <meta name="theme-color" content="#ff0000">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="Peretex">
-    <link rel="apple-touch-icon" href="peretexicono.png">
+    <meta name="apple-mobile-web-app-title" content="Perro">
+    <link rel="apple-touch-icon" href="hernanicono.png">
 </head>
 
 <body>
     <div id="app">
         <!-- Pantalla 1: Bienvenida -->
         <section id="screen-welcome" class="screen active">
-            <img src="peretexicono.png" alt="Peretex" class="logo-fullscreen">
+            <img src="hernanicono.png" alt="Perro" class="logo-fullscreen">
             <div class="overlay-content dark-fade-in">
-                <h1 class="title-top">PERETEX <br>EL IMPOSTOR</h1>
+                <h1 class="title-top">PERRO <br>EL IMPOSTOR</h1>
                 <button class="btn btn-primary pulse" style="margin-top: auto; margin-bottom: 5vh;"
                     onclick="app.toScreen('menu')">Clic para continuar</button>
             </div>
@@ -35,7 +35,7 @@
         <section id="screen-menu" class="screen">
             <button class="btn-exit" onclick="app.toScreen('welcome')" title="Volver al inicio">✕</button>
             <div class="overlay-content">
-                <img src="peretexmenu2.png" alt="Peretex"
+                <img src="hernanmenu.png" alt="Perro"
                     style="width: 100%; max-width: 400px; height: auto; margin-bottom: 1rem; border-radius: 20px;">
 
                 <div class="menu-grid">
@@ -121,7 +121,7 @@
                 </div>
 
                 <div id="player-reveal-name">NOMBRE</div>
-                <img id="reveal-image-cover" src="peretexgenerica.png" class="reveal-image-cover">
+                <img id="reveal-image-cover" src="hernanmenu.png" class="reveal-image-cover">
 
                 <div id="reveal-hint" class="hint-arrow">
                     <span style="font-size: 0.9rem; font-weight: 800; letter-spacing: 1px; margin-bottom: 5px;">DESLIZÁ
@@ -166,16 +166,16 @@
         <!-- Votación -->
         <section id="screen-vote" class="screen">
             <div class="overlay-content">
-                <h2 style="color: var(--accent); margin-bottom: 2rem; text-align: center;">IDENTIFICAR A PERETEX</h2>
+                <h2 style="color: var(--accent); margin-bottom: 2rem; text-align: center;">IDENTIFICAR A PERRO</h2>
                 <div id="vote-grid" class="vote-grid" style="overflow-y: auto; flex: 1; padding: 1rem;"></div>
                 <button class="btn btn-primary" style="margin-top: 1.5rem; margin-bottom: 2rem;"
-                    onclick="app.confirmVote()">PERETEX TE ENCONTRÉ</button>
+                    onclick="app.confirmVote()">PERRO TE ENCONTRÉ</button>
             </div>
         </section>
 
         <!-- Resultado Final -->
         <section id="screen-result" class="screen" style="padding: 0;">
-            <img id="result-img" src="peretexlibre.png" class="fullscreen-bg">
+            <img id="result-img" src="hernanlibre.png" class="fullscreen-bg">
             <div class="overlay-content">
                 <h1 id="result-title"
                     style="font-size: 2.5rem; text-align: center; text-shadow: 0 4px 15px #000; margin-bottom: 1rem;">

@@ -1,15 +1,14 @@
-const CACHE_NAME = 'peretex-impostor-v1';
+const CACHE_NAME = 'perro-impostor-v1';
 const ASSETS = [
     './',
     './index.html',
     './style.css',
     './main.js',
     './manifest.webmanifest',
-    './peretexicono.png',
-    './peretexmenu2.png',
-    './peretexlibre.png',
-    './peretextriste.png',
-    './peretexgenerica.png'
+    './hernanicono.png',
+    './hernanmenu.png',
+    './hernanlibre.png',
+    './hernantriste.png'
 ];
 
 self.addEventListener('install', (event) => {

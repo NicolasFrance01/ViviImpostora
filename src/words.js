@@ -63,7 +63,7 @@ export const WORD_BANK = {
     "Radio", "Stream", "Vinilo", "Casete", "Instrumento", "Partitura", "Solfeo", "Ensayo", "Gira", "Fan"
   ],
   "Personajes": [
-    "Peretex el Impostor", "Messi", "Maradona", "Spider-Man", "Batman", "Superman", "Iron Man", "Mickey Mouse", "Homer Simpson", "Harry Potter",
+    "Perro el Impostor", "Messi", "Maradona", "Spider-Man", "Batman", "Superman", "Iron Man", "Mickey Mouse", "Homer Simpson", "Harry Potter",
     "Darth Vader", "Sherlock Holmes", "Drácula", "Frankenstein", "Elvis Presley", "Michael Jackson", "Marilyn Monroe", "Dalí", "Einstein", "Picasso",
     "Napoleón", "Julio César", "Cleopatra", "Juana de Arco", "Papá Noel", "Ratón Pérez", "Cenicienta", "Blancanieves", "Shrek", "Pikachu",
     "Bugs Bunny", "Tom y Jerry", "Mafalda", "Don Quijote", "San Martín", "Belgrano", "Shakira", "Rihanna", "Beyoncé", "Lady Gaga"

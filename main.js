@@ -1,6 +1,6 @@
 import { WORD_BANK } from './src/words.js';
 
-class PeretexGame {
+class PerroGame {
     constructor() {
         this.state = {
             screen: 'welcome',
@@ -98,7 +98,7 @@ class PeretexGame {
     }
 
     resetGame() {
-        console.log('Peretex: Hard Resetting...');
+        console.log('Perro: Hard Resetting...');
 
         // Stop all timers
         if (this.state.currentGame?.timerId) clearInterval(this.state.currentGame.timerId);
@@ -313,7 +313,7 @@ class PeretexGame {
             players[playerIndex].isImpostor = true;
 
             if (this.state.mode === 'Clásico') {
-                players[playerIndex].word = 'PERETEX EL IMPOSTOR';
+                players[playerIndex].word = 'PERRO EL IMPOSTOR';
             } else if (this.state.mode === 'Misterioso') {
                 let mysteryWord = words[Math.floor(Math.random() * words.length)];
                 while (mysteryWord === mainWord) mysteryWord = words[Math.floor(Math.random() * words.length)];
@@ -520,9 +520,9 @@ class PeretexGame {
 
         if (target.isImpostor) {
             this.state.currentGame.totalFound++;
-            img.src = 'peretextriste.png';
+            img.src = 'hernantriste.png';
             title.innerText = '¡LO ENCONTRASTE!';
-            msg.innerText = `${target.name} ERA PERETEX EL IMPOSTOR.`;
+            msg.innerText = `${target.name} ERA PERRO EL IMPOSTOR.`;
 
             if (this.state.currentGame.totalFound >= this.state.currentGame.totalImpostors) {
                 title.innerText = '¡GANASTE!';
@@ -532,8 +532,8 @@ class PeretexGame {
                 btnContinue.style.display = 'block';
             }
         } else {
-            img.src = 'peretexlibre.png';
-            title.innerText = 'PERETEX SIGUE SUELTO';
+            img.src = 'hernanlibre.png';
+            title.innerText = 'PERRO SIGUE SUELTO';
             msg.innerText = `${target.name} ERA INOCENTE. EL TIEMPO SIGUE CORRIENDO.`;
             btnContinue.style.display = 'block';
         }
@@ -548,4 +548,4 @@ class PeretexGame {
     }
 }
 
-new PeretexGame();
+new PerroGame();
