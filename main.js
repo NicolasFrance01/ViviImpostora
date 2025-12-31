@@ -1,6 +1,6 @@
 import { WORD_BANK } from './src/words.js';
 
-class PerroGame {
+class ViviGame {
     constructor() {
         this.state = {
             screen: 'welcome',
@@ -98,7 +98,7 @@ class PerroGame {
     }
 
     resetGame() {
-        console.log('Perro: Hard Resetting...');
+        console.log('Vivi: Hard Resetting...');
 
         // Stop all timers
         if (this.state.currentGame?.timerId) clearInterval(this.state.currentGame.timerId);
@@ -313,7 +313,7 @@ class PerroGame {
             players[playerIndex].isImpostor = true;
 
             if (this.state.mode === 'Clásico') {
-                players[playerIndex].word = 'PERRO EL IMPOSTOR';
+                players[playerIndex].word = 'VIVI LA IMPOSTOR';
             } else if (this.state.mode === 'Misterioso') {
                 let mysteryWord = words[Math.floor(Math.random() * words.length)];
                 while (mysteryWord === mainWord) mysteryWord = words[Math.floor(Math.random() * words.length)];
@@ -520,9 +520,9 @@ class PerroGame {
 
         if (target.isImpostor) {
             this.state.currentGame.totalFound++;
-            img.src = 'hernantriste.png';
-            title.innerText = '¡LO ENCONTRASTE!';
-            msg.innerText = `${target.name} ERA PERRO EL IMPOSTOR.`;
+            img.src = 'vivitriste.png';
+            title.innerText = '¡LA ENCONTRASTE!';
+            msg.innerText = `${target.name} ERA VIVI LA IMPOSTOR.`;
 
             if (this.state.currentGame.totalFound >= this.state.currentGame.totalImpostors) {
                 title.innerText = '¡GANASTE!';
@@ -532,8 +532,8 @@ class PerroGame {
                 btnContinue.style.display = 'block';
             }
         } else {
-            img.src = 'hernanlibre.png';
-            title.innerText = 'PERRO SIGUE SUELTO';
+            img.src = 'vivilibre.jpg';
+            title.innerText = 'VIVI SIGUE SUELTA';
             msg.innerText = `${target.name} ERA INOCENTE. EL TIEMPO SIGUE CORRIENDO.`;
             btnContinue.style.display = 'block';
         }
@@ -548,4 +548,4 @@ class PerroGame {
     }
 }
 
-new PerroGame();
+new ViviGame();

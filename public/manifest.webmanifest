@@ -1,6 +1,6 @@
 {
-    "name": "Perro el Impostor",
-    "short_name": "Perro",
+    "name": "Vivi la Impostor",
+    "short_name": "Vivi",
     "description": "Juego de deducción y engaño social.",
     "start_url": ".",
     "display": "standalone",
@@ -9,13 +9,13 @@
     "orientation": "portrait",
     "icons": [
         {
-            "src": "hernaniconoapp.png",
+            "src": "viviiconoapp.png",
             "sizes": "192x192",
             "type": "image/png",
             "purpose": "any maskable"
         },
         {
-            "src": "hernaniconoapp.png",
+            "src": "viviiconoapp.png",
             "sizes": "1024x1024",
             "type": "image/png"
         }

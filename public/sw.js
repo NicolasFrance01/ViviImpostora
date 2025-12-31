@@ -1,16 +1,16 @@
-const CACHE_NAME = 'perro-impostor-v1';
+const CACHE_NAME = 'vivi-impostora-v1';
 const ASSETS = [
     './',
     './index.html',
     './style.css',
     './main.js',
     './manifest.webmanifest',
-    './hernanicono.png',
-    './hernaniconoapp.png',
-    './hernanmenu.png',
-    './hernanlibre.png',
-    './hernantriste.png',
-    './hernangenerica.png'
+    './viviicono.png',
+    './viviiconoapp.png',
+    './vivimenu.png',
+    './vivilibre.jpg',
+    './vivitriste.png',
+    './vivigenerica.png'
 ];
 
 self.addEventListener('install', (event) => {
